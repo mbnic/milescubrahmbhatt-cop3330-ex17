@@ -10,19 +10,24 @@ public class App {
 
         myApp.getInfo(person);
         double BAC = myApp.calculateBAC(person);
+
+        myApp.printOutput(BAC);
+    }
+
+    public void printOutput(double bac) {
+        System.out.printf("Your BAC is %f. i think....\n", bac);
+        System.out.print("I'm really not sure if you can or can't drive\n BAC machine broke");
     }
 
     public double calculateBAC(Drinker person) {
-
+        //i swear im doing this formula exactly
         double test = ((person.ouncesDrank * 5.14)/(person.bodyWeight * .73));
-        // -
+
         double test2 = (.015 * person.hoursSince);
 
         double test3 = test - test2;
 
         double bac = ((person.ouncesDrank * 5.14) / (person.bodyWeight * .73)) - (.015 * person.hoursSince);
-
-        System.out.printf("%f", test3);
 
         return bac;
     }
